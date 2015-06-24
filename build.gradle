@@ -1,0 +1,75 @@
+
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.4.RELEASE")
+        classpath 'com.bmuschko:gradle-cargo-plugin:2.+'
+    }
+}
+
+apply plugin: 'war'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+apply plugin: 'com.bmuschko.cargo-base'
+
+import com.bmuschko.gradle.cargo.convention.Deployable
+import com.bmuschko.gradle.cargo.tasks.remote.CargoRedeployRemote
+
+
+def contextPath = "cat";
+def tomcatPath =''
+
+war {
+    baseName = 'hypercat'
+    version =  '0.1.0'
+}
+
+configurations {
+    providedRuntime
+}
+
+repositories {
+    mavenCentral()
+}
+
+task deployToDev (type: CargoRedeployRemote){
+	dependsOn build
+    containerId = 'tomcat7x'
+    port =80
+    hostname = 'localhost'
+    username = 'deploy'
+    password = 'RZWNzdcm8T^J4x%;'
+	deployables = [new Deployable(file: file("${buildDir}/libs/${project.war.archiveName}"), context:  contextPath)]
+}
+
+task deployToProd(type: CargoRedeployRemote){
+	dependsOn build
+    containerId = 'tomcat7x'
+    port =80
+    hostname = 'www.waterworx.io'
+    username = 'aquamatix'
+    password = 'i^;.B$5ROX[1riz'
+	deployables = [new Deployable(file: file("${buildDir}/libs/${project.war.archiveName}"), context: contextPath)]
+}
+
+task copyLocal(type: Copy) {
+    from("${buildDir}/libs/")
+    into(tomcatPath)
+    include '**/*.war'
+    rename("${project.war.archiveName}","${contextPath}")
+}
+
+dependencies {
+	compile 'joda-time:joda-time:2.3'
+    compile("org.springframework.boot:spring-boot-starter-web")
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+    testCompile("junit:junit")
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.1'
+}
