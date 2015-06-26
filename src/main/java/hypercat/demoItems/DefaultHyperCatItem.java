@@ -1,13 +1,15 @@
 package hypercat.demoItems;
 
-import hypercat.entries.DefaultHypercatEntry;
+
+import hypercat.entries.TSBIOTHypercatEntry;
 import hypercat.items.AbstractHypercatItem;
 
 public class DefaultHyperCatItem extends AbstractHypercatItem {
 	
 	public DefaultHyperCatItem(String href){
 		super(href);
-		addEntry(new DefaultHypercatEntry("isContentType","application/vnd.tsbiot.catalogue+json"));
+		addEntry(new TSBIOTHypercatEntry("isContentType","application/vnd.tsbiot.catalogue+json"));
+		
 	}
 
 }

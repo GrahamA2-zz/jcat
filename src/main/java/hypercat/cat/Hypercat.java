@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Hypercat {
 
-	public Hypercat(long id, String content) {
+	public Hypercat() {
 		super();
 	}
 	
@@ -23,8 +23,9 @@ public class Hypercat {
 	
 	
 	public Object[] getItems(){
-		HypercatItem devices = new DefaultHyperCatItem("/cats/devices");
-		HypercatItem organisations = new DefaultHyperCatItem("/cats/organisations");
+		HypercatItem devices = new DefaultHyperCatItem("/cat/devic"
+				+ "es");
+		HypercatItem organisations = new DefaultHyperCatItem("/cat/organisations");
 		return new Object[]{ devices, organisations} ;
 	}
 }

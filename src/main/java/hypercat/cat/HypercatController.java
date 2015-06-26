@@ -8,15 +8,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-
 public class HypercatController {
 	
-	private static final String template = "Hello, %s!";
-	private final AtomicLong counter = new AtomicLong();
 	
 	@RequestMapping(value="/", method=RequestMethod.GET)
-	public Hypercat greeting(@RequestParam(value="name", defaultValue="World") String name){
-		return new Hypercat(counter.incrementAndGet(), String.format(template, name));
+	public Hypercat cat(){
+		return new Hypercat();
 		
 		
 		

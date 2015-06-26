@@ -1,16 +1,11 @@
 package hypercat.items;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
-import hypercat.entries.ContentType;
-import hypercat.entries.DefaultHypercatEntry;
-import hypercat.entries.EmptyCatalogue;
 import hypercat.entries.HypercatEntry;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Collections;
 
 public abstract class AbstractHypercatItem implements HypercatItem {
 	
