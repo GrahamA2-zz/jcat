@@ -9,7 +9,7 @@ To run the cat just type gradle bootRun
 
 
 
-The application supports auto mated deployment, create a gradle.properties file and add the following
+The application supports automated deployment, create a gradle.properties file and add the following
 
 devHostname=<host>
 devUsername = <name>
