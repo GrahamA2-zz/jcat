@@ -19,7 +19,6 @@ apply plugin: 'com.bmuschko.cargo-base'
 import com.bmuschko.gradle.cargo.convention.Deployable
 import com.bmuschko.gradle.cargo.tasks.remote.CargoRedeployRemote
 
-
 def contextPath = "cat";
 def tomcatPath =''
 
@@ -46,19 +45,20 @@ task deployToDev (type: CargoRedeployRemote){
 	dependsOn build
     containerId = 'tomcat7x'
     port =80
-    hostname = 'localhost'
-    username = 'deploy'
-    password = 'RZWNzdcm8T^J4x%;'
+    hostname = "$devHostname"
+    username = "$devUsername"
+    password = "$devPassword"
 	deployables = [new Deployable(file: file("${buildDir}/libs/${project.war.archiveName}"), context:  contextPath)]
 }
+
 
 task deployToProd(type: CargoRedeployRemote){
 	dependsOn build
     containerId = 'tomcat7x'
     port =80
-    hostname = 'www.waterworx.io'
-    username = 'aquamatix'
-    password = 'i^;.B$5ROX[1riz'
+    hostname = "$prodHostname"
+    username = "$prodUsername"
+    password = "$prodPassword"
 	deployables = [new Deployable(file: file("${buildDir}/libs/${project.war.archiveName}"), context: contextPath)]
 }
 
