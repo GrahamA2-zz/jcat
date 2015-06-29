@@ -1,9 +1,9 @@
  package hypercat.cat;
 
-import hypercat.demo.entries.WaterworxCatalogueEntry;
-import hypercat.demo.items.DefaultHyperCatItem;
+
 import hypercat.entries.ContentType;
 import hypercat.entries.EmptyCatalogue;
+import hypercat.items.CalaloguetHypercatItem;
 import hypercat.items.HypercatItem;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -17,14 +17,14 @@ public class Hypercat {
 	
 	@JsonProperty("item-metadata")
 	public Object[] getIemMetadata(){
-		return new Object[] {new ContentType(), new WaterworxCatalogueEntry()};
+		return new Object[] {new ContentType(), new EmptyCatalogue()};
 		
 	}
 	
 	
 	public Object[] getItems(){
-		HypercatItem devices = new DefaultHyperCatItem("/cat/devices");
-		HypercatItem organisations = new DefaultHyperCatItem("/cat/organisations");
+		HypercatItem devices = new CalaloguetHypercatItem("/cat/devices");
+		HypercatItem organisations = new CalaloguetHypercatItem("/cat/organisations");
 		return new Object[]{ devices, organisations} ;
 	}
 }
