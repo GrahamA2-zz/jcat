@@ -1,7 +1,7 @@
  package hypercat.cat;
 
-import hypercat.demoItems.DefaultHyperCatItem;
-import hypercat.demoItems.WaterworxCatalogue;
+import hypercat.demo.entries.WaterworxCatalogueEntry;
+import hypercat.demo.items.DefaultHyperCatItem;
 import hypercat.entries.ContentType;
 import hypercat.entries.EmptyCatalogue;
 import hypercat.items.HypercatItem;
@@ -17,8 +17,7 @@ public class Hypercat {
 	
 	@JsonProperty("item-metadata")
 	public Object[] getIemMetadata(){
-		return new Object[] {new ContentType(), new WaterworxCatalogue()};
-		
+		return new Object[] {new ContentType(), new WaterworxCatalogueEntry()};
 		
 	}
 	

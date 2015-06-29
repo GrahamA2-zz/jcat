@@ -1,11 +1,11 @@
-package hypercat.cat;
+package hypercat.demo;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-import hypercat.demoItems.DemoSensorHyperCatItem;
+import hypercat.demo.items.DemoSensorHyperCatItem;
 import hypercat.entries.ContentType;
 import hypercat.entries.TSBIOTHypercatEntry;
 

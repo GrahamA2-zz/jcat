@@ -1,4 +1,4 @@
-package hypercat.demoItems;
+package hypercat.demo.items;
 
 import hypercat.entries.DefaultHypercatEntry;
 import hypercat.entries.TSBIOTHypercatEntry;
