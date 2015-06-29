@@ -1,4 +1,4 @@
-package hypercat.cat;
+package io.hypercat.cat;
 
 import java.util.concurrent.atomic.AtomicLong;
 

@@ -1,10 +1,10 @@
- package hypercat.cat;
+ package io.hypercat.cat;
 
 
-import hypercat.entries.ContentType;
-import hypercat.entries.EmptyCatalogue;
-import hypercat.items.CalaloguetHypercatItem;
-import hypercat.items.HypercatItem;
+import io.hypercat.entries.ContentType;
+import io.hypercat.entries.EmptyCatalogue;
+import io.hypercat.items.CalaloguetHypercatItem;
+import io.hypercat.items.HypercatItem;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

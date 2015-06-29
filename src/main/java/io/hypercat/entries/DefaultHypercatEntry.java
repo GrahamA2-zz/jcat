@@ -1,4 +1,4 @@
-package hypercat.entries;
+package io.hypercat.entries;
 
 public final class DefaultHypercatEntry extends AbstractHypercatEntry {
 

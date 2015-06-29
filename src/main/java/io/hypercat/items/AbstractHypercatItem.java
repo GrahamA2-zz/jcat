@@ -1,6 +1,6 @@
-package hypercat.items;
+package io.hypercat.items;
 
-import hypercat.entries.HypercatEntry;
+import io.hypercat.entries.HypercatEntry;
 
 import java.util.ArrayList;
 import java.util.Collection;

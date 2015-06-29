@@ -1,4 +1,4 @@
-package hypercat.entries;
+package io.hypercat.entries;
 
 public interface HypercatEntry {
 

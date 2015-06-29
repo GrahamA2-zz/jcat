@@ -1,7 +1,7 @@
-package hypercat.items;
+package io.hypercat.items;
 
 
-import hypercat.entries.TSBIOTHypercatEntry;
+import io.hypercat.entries.TSBIOTHypercatEntry;
 
 public class CalaloguetHypercatItem extends AbstractHypercatItem {
 	
