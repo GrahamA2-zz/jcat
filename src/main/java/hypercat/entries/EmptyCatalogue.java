@@ -1,9 +1,9 @@
 package hypercat.entries;
 
 
-public class EmptyCatalogue extends AbstractHypercatEntry {
+public final class EmptyCatalogue extends TSBIOTHypercatEntry {
 
 	public EmptyCatalogue(){
-		super("urn:X-tsbiot:rels:hasDescription:en","Minimal empty catalogue");
+		super("hasDescription:en","Minimal empty catalogue");
 	}
 }

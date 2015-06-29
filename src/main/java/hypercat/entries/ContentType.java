@@ -1,9 +1,9 @@
 package hypercat.entries;
 
 
-public class ContentType extends AbstractHypercatEntry {
+public final class ContentType extends TSBIOTHypercatEntry {
 
 	public ContentType(){
-		super("urn:X-tsbiot:rels:isContentType","application/vnd.tsbiot.catalogue+json" );
+		super("isContentType","application/vnd.tsbiot.catalogue+json" );
 	}
 }
