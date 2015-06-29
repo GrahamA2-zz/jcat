@@ -12,6 +12,7 @@ public class Hypercat {
 
 	public Hypercat() {
 		super();
+		//TODO if items = null/size-0 return an empty description
 	}
 	
 	@JsonProperty("item-metadata")
@@ -23,8 +24,7 @@ public class Hypercat {
 	
 	
 	public Object[] getItems(){
-		HypercatItem devices = new DefaultHyperCatItem("/cat/devic"
-				+ "es");
+		HypercatItem devices = new DefaultHyperCatItem("/cat/devices");
 		HypercatItem organisations = new DefaultHyperCatItem("/cat/organisations");
 		return new Object[]{ devices, organisations} ;
 	}
