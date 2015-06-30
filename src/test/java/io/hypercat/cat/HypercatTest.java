@@ -12,7 +12,7 @@ import org.junit.Test;
 public class HypercatTest {
 
 	private final static String DEFAULT_REL = "urn:X-tsbiot:rels:";
-	Hypercat cat = new HypercatImpl();
+	HypercatImpl cat = new HypercatImpl();
 
 	public static String makeRel(String rel) {
 		return DEFAULT_REL + rel;

@@ -12,6 +12,7 @@ import io.hypercat.entries.HypercatEntry;
 import org.hamcrest.Matcher;
 import org.hamcrest.collection.IsCollectionWithSize;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class AbstractHypercatItemTest {
@@ -34,14 +35,14 @@ public class AbstractHypercatItemTest {
 		assertThat(item.getIemMetadata(), IsCollectionWithSize.hasSize(0));
 	}
 
-	@Test
+	@Ignore
 	public void testAddEntry() {
 		assertThat(item.getIemMetadata(), IsCollectionWithSize.hasSize(0));
 		HypercatEntry entry = new DefaultHypercatEntry("a","b");
 		item.addEntry( entry );
 		assertThat(item.getIemMetadata(), IsCollectionWithSize.hasSize(1));
 		//assertThat(item.getIemMetadata(), hasItem(is(anything())));
-		
+		fail("Need to check the contence of the collection");
 	}
 
 

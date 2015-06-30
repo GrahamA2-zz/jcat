@@ -3,6 +3,7 @@
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import io.hypercat.entries.ContentType;
@@ -15,30 +16,29 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public final class HypercatImpl implements Hypercat {
 
-	List<HypercatItem> catItems;
+	private final List<HypercatItem> catItems;
+	private final List<HypercatEntry> metadata;
 	
 	public HypercatImpl() {
 		super();
 		catItems = new ArrayList<HypercatItem>();
+		
+		metadata = new ArrayList<HypercatEntry>();
+		metadata.add(new ContentType());
+		metadata.add(new EmptyCatalogue());
 	}
 	
 	@Override
 	public Collection<? extends HypercatEntry> getIemMetadata(){
-		List<HypercatEntry> l = new ArrayList<HypercatEntry>();
-		l.add(new ContentType());
-		l.add(new EmptyCatalogue());
-		return l;
+		return Collections.unmodifiableCollection(metadata);
 		
 	}
 	
 	@Override
 	public Collection<? extends HypercatItem> getItems(){	
-		
-	
-		return catItems;
+		return Collections.unmodifiableCollection(catItems);
 	}
 
-	@Override
 	public void addItem(HypercatItem item) {
 		catItems.add(item);
 	}
