@@ -20,8 +20,6 @@ public final class HypercatImpl implements Hypercat {
 	public HypercatImpl() {
 		super();
 		catItems = new ArrayList<HypercatItem>();
-		//catItems.add(new CalaloguetHypercatItem("/cat/devices"));
-		//catItems.add(new CalaloguetHypercatItem("/cat/organisations"));
 	}
 	
 	@Override
