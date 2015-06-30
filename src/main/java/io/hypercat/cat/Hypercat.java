@@ -1,30 +1,25 @@
- package io.hypercat.cat;
-
+package io.hypercat.cat;
 
 import io.hypercat.entries.ContentType;
 import io.hypercat.entries.EmptyCatalogue;
+import io.hypercat.entries.HypercatEntry;
 import io.hypercat.items.CalaloguetHypercatItem;
 import io.hypercat.items.HypercatItem;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Hypercat {
+public interface Hypercat {
 
-	public Hypercat() {
-		super();
-		//TODO if items = null/size-0 return an empty description
-	}
+	
+	public abstract Collection<? extends HypercatItem> getItems();
 	
 	@JsonProperty("item-metadata")
-	public Object[] getIemMetadata(){
-		return new Object[] {new ContentType(), new EmptyCatalogue()};
-		
-	}
-	
-	
-	public Object[] getItems(){
-		HypercatItem devices = new CalaloguetHypercatItem("/cat/devices");
-		HypercatItem organisations = new CalaloguetHypercatItem("/cat/organisations");
-		return new Object[]{ devices, organisations} ;
-	}
+	public abstract Collection<? extends HypercatEntry> getIemMetadata();
+
+	public abstract void addItem(HypercatItem item);
+
 }

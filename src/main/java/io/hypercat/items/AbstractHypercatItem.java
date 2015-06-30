@@ -13,6 +13,7 @@ public abstract class AbstractHypercatItem implements HypercatItem {
 	private final String href;
 	
 	
+	@Override
 	public String getHref() {
 		return href;
 	}
@@ -21,12 +22,12 @@ public abstract class AbstractHypercatItem implements HypercatItem {
 		this.href = href;	
 	}
 	
-	@JsonProperty("i-object-metadata")
+	@Override
 	public Collection<? extends HypercatEntry> getIemMetadata(){
 		return java.util.Collections.unmodifiableCollection(items);
 	}
 	
-	public void addEntry(HypercatEntry entry){
+	public final void addEntry(HypercatEntry entry){
 		items.add(entry);
 	}
 	

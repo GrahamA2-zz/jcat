@@ -13,10 +13,7 @@ public class HypercatController {
 	
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public Hypercat cat(){
-		return new Hypercat();
-		
-		
-		
+		return new HypercatImpl();
 	}
 
 }
