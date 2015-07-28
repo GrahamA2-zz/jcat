@@ -11,7 +11,7 @@ import org.junit.Test;
 
 public class HypercatTest {
 
-	private final static String DEFAULT_REL = "urn:X­hypercat:rels:";
+	private final static String DEFAULT_REL = "urn:X-hypercat:rels:";
 	HypercatImpl cat = new HypercatImpl();
 
 	public static String makeRel(String rel) {
