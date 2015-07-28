@@ -20,7 +20,7 @@ public class CalaloguetHypercatItemTest {
 
 	@Test
 	public void testThatCalaloguetHypercatItemHasCorrectContentType() {
-		assertThat(item.getIemMetadata(),hasItem(valMatcher("application/vnd.tsbiot.catalogue+json")));
+		assertThat(item.getIemMetadata(),hasItem(valMatcher("application/vnd.hypercat.catalogue+json")));
 	}
 
 }

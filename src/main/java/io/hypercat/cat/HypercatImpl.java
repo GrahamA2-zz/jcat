@@ -6,6 +6,8 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import io.hypercat.entries.ContentType;
 import io.hypercat.entries.DefaultHypercatEntry;
 import io.hypercat.entries.EmptyCatalogue;
@@ -15,6 +17,7 @@ import io.hypercat.items.HypercatItem;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@Resource
 public final class HypercatImpl implements Hypercat {
 
 	private final List<HypercatItem> catItems;
@@ -23,10 +26,9 @@ public final class HypercatImpl implements Hypercat {
 	public HypercatImpl() {
 		super();
 		catItems = new ArrayList<HypercatItem>();
-		
 		metadata = new ArrayList<HypercatEntry>();
-		metadata.add(new ContentType());
-		metadata.add(new DefaultHypercatEntry("urn:X-tsbiot:rels:hasDescription:en","Waterworx HYPER/CAT"));
+		addMeatadata(new ContentType());
+		addMeatadata(new EmptyCatalogue());
 	}
 	
 	@Override
@@ -41,7 +43,13 @@ public final class HypercatImpl implements Hypercat {
 	}
 
 	@Override
-	public void add(HypercatItem item) {
+	public void addItem(HypercatItem item) {
 		catItems.add(item);
+	}
+
+	@Override
+	public void addMeatadata(HypercatEntry item) {
+		metadata.add(item);
+		
 	}
 }

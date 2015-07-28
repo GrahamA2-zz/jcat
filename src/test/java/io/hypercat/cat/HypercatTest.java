@@ -54,11 +54,11 @@ public class HypercatTest {
 	@Test
 	public void testAddItemToCatalog() {
 		String deviecs = "/cat/devices";
-		cat.add( new CalaloguetHypercatItem(deviecs) );
+		cat.addItem( new CalaloguetHypercatItem(deviecs) );
 		assertThat(cat.getItems(),IsCollectionWithSize.hasSize(1));
 		assertThat(cat.getItems(),hasItem(hrefMatcher(deviecs)));
 		String authors = "/cat/authors";
-		cat.add( new CalaloguetHypercatItem(authors) );
+		cat.addItem( new CalaloguetHypercatItem(authors) );
 		assertThat(cat.getItems(),IsCollectionWithSize.hasSize(2));
 		assertThat(cat.getItems(),hasItem(hrefMatcher(authors)));
 	}

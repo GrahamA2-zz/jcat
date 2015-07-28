@@ -5,7 +5,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.4.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.5.RELEASE")
         classpath 'com.bmuschko:gradle-cargo-plugin:2.+'
     }
 }
@@ -72,6 +72,7 @@ task copyLocal(type: Copy) {
 dependencies {
 	//compile 'joda-time:joda-time:2.3'
     compile("org.springframework.boot:spring-boot-starter-web")
+  
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
     testCompile("junit:junit")
     
