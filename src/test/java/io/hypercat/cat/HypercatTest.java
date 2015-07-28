@@ -11,7 +11,7 @@ import org.junit.Test;
 
 public class HypercatTest {
 
-	private final static String DEFAULT_REL = "urn:X-tsbiot:rels:";
+	private final static String DEFAULT_REL = "urn:X­hypercat:rels:";
 	HypercatImpl cat = new HypercatImpl();
 
 	public static String makeRel(String rel) {
@@ -24,7 +24,7 @@ public class HypercatTest {
 
 	@Test
 	public void testThatGetIemMetadataHasTwoItems() {
-		assertThat("A mininal catalog shold contain two entries",
+		assertThat("A mininal catalog should contain two entries",
 				cat.getIemMetadata(), IsCollectionWithSize.hasSize(2));
 	}
 
