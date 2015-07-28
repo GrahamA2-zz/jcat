@@ -9,15 +9,13 @@
 A simple in memory HYPER/CAT using Spring Boot
 
 
-
-
 Requires Gradle 2.4 and Java 1.7 to be installed
 
-To run the cat just type `gradle bootRun `
+To run the cat just type `gradle bootRun`, you must add a gradle.properties properties file to the project to allow it to compile but it can be empty 
 
+The hypercat will be located at locahost:8080 (if you deploy to an existing Tomcat container it will be at /cat)
 
-
-The application supports automated deployment, create a gradle.properties file and add the following:
+The application supports automated deployment, add  add the following to the gradle.properties file:
 
 
     devHostname=<host>
