@@ -7,6 +7,7 @@ import java.util.Collections;
 import java.util.List;
 
 import io.hypercat.entries.ContentType;
+import io.hypercat.entries.DefaultHypercatEntry;
 import io.hypercat.entries.EmptyCatalogue;
 import io.hypercat.entries.HypercatEntry;
 import io.hypercat.items.CalaloguetHypercatItem;
@@ -25,7 +26,7 @@ public final class HypercatImpl implements Hypercat {
 		
 		metadata = new ArrayList<HypercatEntry>();
 		metadata.add(new ContentType());
-		metadata.add(new EmptyCatalogue());
+		metadata.add(new DefaultHypercatEntry("urn:X-tsbiot:rels:hasDescription:en","Waterworx HYPER/CAT"));
 	}
 	
 	@Override
@@ -39,7 +40,8 @@ public final class HypercatImpl implements Hypercat {
 		return Collections.unmodifiableCollection(catItems);
 	}
 
-	public void addItem(HypercatItem item) {
+	@Override
+	public void add(HypercatItem item) {
 		catItems.add(item);
 	}
 }

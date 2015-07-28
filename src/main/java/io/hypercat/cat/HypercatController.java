@@ -10,10 +10,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HypercatController {
 	
+	public static Hypercat cat;
+	
+	{
+		cat = new HypercatImpl();
+		
+	}
 	
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public Hypercat cat(){
-		return new HypercatImpl();
+		return cat;
 	}
 
 }

@@ -16,7 +16,7 @@ public final class CalaloguetHypercatItem extends AbstractHypercatItem {
 	 */
 	public CalaloguetHypercatItem(String url){
 		super(url);
-		addEntry(new TSBIOTHypercatEntry("isContentType","application/vnd.tsbiot.catalogue+json"));
+		addEntry(new TSBIOTHypercatEntry("isContentType","application/vnd.hypercat.catalogue+json"));
 		
 	}
 

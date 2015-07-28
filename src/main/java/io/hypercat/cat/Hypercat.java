@@ -20,6 +20,8 @@ public interface Hypercat {
 	@JsonProperty("item-metadata")
 	public abstract Collection<? extends HypercatEntry> getIemMetadata();
 
+	void add(HypercatItem item);
+
 	
 
 }
