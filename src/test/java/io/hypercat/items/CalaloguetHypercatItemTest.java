@@ -22,5 +22,10 @@ public class CalaloguetHypercatItemTest {
 	public void testThatCalaloguetHypercatItemHasCorrectContentType() {
 		assertThat(item.getIemMetadata(),hasItem(valMatcher("application/vnd.hypercat.catalogue+json")));
 	}
+	
+	@Test
+	public void testThatCalaloguetHypercatItemHasDescriptione() {
+		assertThat(item.getIemMetadata(),hasItem(relMatcher("urn:X-hypercat:rels:hasDescription:en")));
+	}
 
 }

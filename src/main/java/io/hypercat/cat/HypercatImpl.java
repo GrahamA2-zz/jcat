@@ -27,12 +27,16 @@ public final class HypercatImpl implements Hypercat {
 		super();
 		catItems = new ArrayList<HypercatItem>();
 		metadata = new ArrayList<HypercatEntry>();
-		addMeatadata(new ContentType());
-		addMeatadata(new EmptyCatalogue());
 	}
 	
 	@Override
-	public Collection<? extends HypercatEntry> getIemMetadata(){
+	public Collection<? extends HypercatEntry> getIemMetadata(){		
+		if (metadata.size() == 0){ //Add some default data
+	    	addMeatadata(new ContentType());
+	    	addMeatadata(new DefaultHypercatEntry("urn:X-hypercat:rels:hasDescription:en","Waterworx HYPER/CAT"));	  
+		}
+		
+		
 		return Collections.unmodifiableCollection(metadata);
 		
 	}
@@ -50,6 +54,5 @@ public final class HypercatImpl implements Hypercat {
 	@Override
 	public void addMeatadata(HypercatEntry item) {
 		metadata.add(item);
-		
 	}
 }
