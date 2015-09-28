@@ -19,8 +19,6 @@ apply plugin: 'com.bmuschko.cargo-base'
 import com.bmuschko.gradle.cargo.convention.Deployable
 import com.bmuschko.gradle.cargo.tasks.remote.CargoRedeployRemote
 
-def contextPath = "cat";
-def tomcatPath =''
 
 version =  '0.0.2'
 
@@ -41,33 +39,8 @@ repositories {
     mavenCentral()
 }
 
-task deployToDev (type: CargoRedeployRemote){
-	dependsOn build
-    containerId = 'tomcat7x'
-    port =80
-    hostname = "$devHostname"
-    username = "$devUsername"
-    password = "$devPassword"
-	deployables = [new Deployable(file: file("${buildDir}/libs/${project.war.archiveName}"), context:  contextPath)]
-}
 
 
-task deployToProd(type: CargoRedeployRemote){
-	dependsOn build
-    containerId = 'tomcat7x'
-    port =80
-    hostname = "$prodHostname"
-    username = "$prodUsername"
-    password = "$prodPassword"
-	deployables = [new Deployable(file: file("${buildDir}/libs/${project.war.archiveName}"), context: contextPath)]
-}
-
-task copyLocal(type: Copy) {
-    from("${buildDir}/libs/")
-    into(tomcatPath)
-    include '**/*.war'
-    rename("${project.war.archiveName}","${contextPath}")
-}
 
 dependencies {
 	//compile 'joda-time:joda-time:2.3'
