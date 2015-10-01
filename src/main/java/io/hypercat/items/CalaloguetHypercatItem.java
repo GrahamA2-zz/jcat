@@ -1,7 +1,7 @@
 package io.hypercat.items;
 
 
-import io.hypercat.entries.TSBIOTHypercatEntry;
+import io.hypercat.entries.XHypercatEntry;
 
 /**
  * Use to point to another instance of a hypercat.  Sets the content type  as catalogue+json
@@ -16,14 +16,14 @@ public final class CalaloguetHypercatItem extends AbstractHypercatItem {
 	 */
 	public CalaloguetHypercatItem(String url, String description){
 		super(url);
-		addEntry(new TSBIOTHypercatEntry("isContentType","application/vnd.hypercat.catalogue+json"));
-		addEntry(new TSBIOTHypercatEntry("hasDescription:en",description) );
+		addEntry(new XHypercatEntry("isContentType","application/vnd.hypercat.catalogue+json"));
+		addEntry(new XHypercatEntry("hasDescription:en",description) );
 	}
 	
 	public CalaloguetHypercatItem(String url){
 		super(url);
-		addEntry(new TSBIOTHypercatEntry("isContentType","application/vnd.hypercat.catalogue+json"));
-		addEntry(new TSBIOTHypercatEntry("hasDescription:en","Hyper/CAT entry"));
+		addEntry(new XHypercatEntry("isContentType","application/vnd.hypercat.catalogue+json"));
+		addEntry(new XHypercatEntry("hasDescription:en","Hyper/CAT entry"));
 	}
 
 }
