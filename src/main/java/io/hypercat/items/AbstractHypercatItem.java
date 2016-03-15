@@ -15,7 +15,8 @@ public abstract class AbstractHypercatItem implements HypercatItem {
 	
 	@Override
 	public String getHref() {
-		return href;
+		String prefix = System.getProperty("HypercatURL", "");
+		return prefix + href;
 	}
 
 	public AbstractHypercatItem(String href){

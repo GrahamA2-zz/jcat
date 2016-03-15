@@ -17,10 +17,14 @@ public class HypercatController {
 		return cat;
 	}
 	
+	@RequestMapping(value="/restart", method=RequestMethod.GET)
+	public String restart(){
+		return "Restart Tomcat to reload propertes";
+	}
+	
 	@Autowired
 	public HypercatController(Hypercat cat){
 		this.cat = cat; 
-		
 	}
 
 }
